@@ -51,7 +51,7 @@ function saveClient() {
 
 function loadData() {
   $.ajax({
-    url: "http://localhost:9000/service-security/v1/api/client/list",
+    url: "http://localhost:9000/service-security/v1/api/client",
     method: "GET",
     dataType: "json",
     success: function (response) {

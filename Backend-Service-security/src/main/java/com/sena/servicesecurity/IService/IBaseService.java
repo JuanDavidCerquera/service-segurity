@@ -3,7 +3,6 @@ package com.sena.servicesecurity.IService;
 import java.util.List;
 import java.util.Optional;
 
-import com.sena.servicesecurity.DTO.IModuleDto;
 import com.sena.servicesecurity.Entity.ABaseEntity;
 
 /**

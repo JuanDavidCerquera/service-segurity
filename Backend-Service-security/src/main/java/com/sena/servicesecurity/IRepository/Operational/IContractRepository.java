@@ -13,6 +13,8 @@ import com.sena.servicesecurity.IRepository.IBaseRepository;
 public interface IContractRepository extends IBaseRepository<Contract,Long>{
 	@Query( value = "SELECT\r\n"
 			+ "c.id,\r\n"
+			+ "c.state,\r\n"
+			+ "c.deleted_at AS deletedAt,\r\n"
 			+ "c.code,\r\n"
 			+ "c.date_start,\r\n"
 			+ "c.date_ending,\r\n"

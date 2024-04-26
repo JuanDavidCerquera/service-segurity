@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -7,22 +8,39 @@
     <meta name="author" content="Videojuegos & Desarrollo">
     <meta name="description" content="Ejemplo de formulario de acceso basado en HTML5 y CSS">
     <meta name="keywords" content="login,formulariode acceso html">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/login.css">
-    
-      <!-- jQuery -->
-  <script src="ruta/a/jquery.min.js"></script>
-  
-  <!-- DataTables JS -->
-  <script src="ruta/a/jquery.dataTables.min.js"></script>
-  
-  <!-- DataTables CSS -->
-  <link rel="stylesheet" type="text/css" href="ruta/a/dataTables.bootstrap.min.css">
-  
-  
+
+    <!-- jQuery -->
+    <script src="ruta/a/jquery.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="ruta/a/jquery.dataTables.min.js"></script>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="ruta/a/dataTables.bootstrap.min.css">
+
+    <!-- Librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <!-- ajax jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+    <!-- Otros estilos -->
+    <link rel="stylesheet" href="/asset/css/global.css">
+    <link rel="stylesheet" href="/assets/css/estyle.css">
+
 </head>
+
 <body class="bodyLo">
-    <div id="contenedor" >
+    <div id="contenedor">
         <div id="contenedorcentrado">
             <div id="login">
                 <form class="needs-validation" id="loginform" novalidate>
@@ -34,7 +52,8 @@
                     <div class="invalid-feedback">Por favor, ingrese una contraseña.</div>
                     <div id="buttonData">
                         <br>
-                        <button name="btnAgregar" onclick="login()" type="button" class="btn btn-success">Iniciar sesión</button>
+                        <button name="btnAgregar" onclick="login()" type="button" class="btn btn-success">Iniciar
+                            sesión</button>
                     </div>
                 </form>
             </div>
@@ -42,19 +61,222 @@
                 <div class="titulo">Bienvenido</div>
                 <hr>
                 <div class="pie-form">
-                    <a href="#">¿Perdiste tu contraseña?</a>
-                    <button></button>
-                    <a href="./view/record.html">¿No tienes cuenta? Regístrate</a>
+                    <br>
+                    <button type="button" class="btn btn-register" data-bs-toggle="modal"
+                        data-bs-target="#modalPersonUser">
+                        Registrarse
+                    </button>
                     <hr>
-                    <a href="#">« Volver</a>
+
                 </div>
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <legend>Person</legend>
+    <div class="modal fade" id="modalPersonUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalPersonUserLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="width: 140%; height: 150%; ">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalPersonUserLabel">Registro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div id="inputdata">
+                            <form class="row g-3 needs-validation" novalidate*class="row g-3 needs-validation"
+                                 novalidate>
+                                <fieldset class="formulario">
+                                    <legend>Person</legend>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">first name</label>
+                                        <div class="col-sm-10">
+                                            <input type="hidden" name="id" id="id" value="">
+                                            <input type="text" class="form-control" name="firstName" id="firstName"
+                                                value="" required placeholder="enter the first name ">
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">last name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="lastName" id="lastName"
+                                                value="" required placeholder="enter the  last name">
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+
+                                        <label class="col-sm-2 col-form-label">Type document</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-select" id="t_document">
+
+                                            </select>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">Document</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" maxlength="10" class="form-control" name="document"
+                                                id="document" value="" required placeholder="enter the document">
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" name="email" id="email" value=""
+                                                required placeholder="enter the  email">
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">phone</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="phone" id="phone" value=""
+                                                required placeholder="enter the phone">
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">dateOfBirth</label>
+                                        <div class="col-sm-10">
+                                            <input type="date" class="form-control" name="date_of_birth"
+                                                id="dateOfBirth" value="" placeholder="Date of birth">
+                                                     
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">gender</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-select" id="gender">
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Femenino</option>
+                                            </select>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                                      
+                                        </div>
+
+
+                                        <label class="col-sm-2 col-form-label">address</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control1" id="address" name="address"></select>
+                                            No
+                                            <input type="number" class="form-control1" name="numeral" id="numeral"
+                                                value="" required placeholder="enter #">
+                                            -
+                                            <input type="text" class="form-control1" name="numeral2" id="numeral2"
+                                                value="" required placeholder="enter #">
+
+                                            -
+                                            <input type="text" class="form-control1" name="description" id="description"
+                                                value="" required placeholder="enter Description">
+
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ingrese el codigo.
+                                            </div>
+                                            <br>
+                                                      
+                                        </div>
+
+
+                                        <label class="col-sm-2 col-form-label" for="city_id">city: </label>
+                                        <div class="col-sm-10">
+                                            <input type="hidden" id="selected_city_id" name="selected_city_id" value="">
+                                            <input type="text" list="city_id" class="form-control" name="city_id"
+                                                id="city_id">
+                                            <br>
+                                        </div>
+
+                                        <label class="col-sm-2 col-form-label">username</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="username" id="username"
+                                                value="" required placeholder="enter the  username">
+                                            <br>
+                                        </div>
+                                        <label class="col-sm-2 col-form-label">password</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="password" id="password"
+                                                value="" required placeholder="enter the  password">
+                                            <br>
+                                        </div>
+
+                                </fieldset>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" name="btnCloced" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick="clearData()">Close</button>
+                        <br>
+                        <button name="btnAgregar" class="btn btn-primary" type="button" onclick="saveUserPerson()"
+                            data-bs-dismiss="modal">Agregar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="/js/Security/login.js"></script>
- <script src="/view/navbar.html"></script>   
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="/js/Security/login.js"></script>
+    <script type="application/javascript" src="/js/Security/record.js"></script>
+    <script type="application/javascript" src="/js/Features/ajaxFunction.js"></script>
+    <script>
+        loadCity();
+    </script>
 </body>
+
 </html>

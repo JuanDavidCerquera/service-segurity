@@ -88,34 +88,14 @@ public class PersonService extends ABaseService<Person> implements IPersonServic
 
    Optional<Client> opClient= serviceClient.findByPersonId(id);
    
-   if (opClient.isEmpty()) {
-       throw new Exception("Registro no encontrado");
-   } else if (opClient.get().getDeletedAt() != null) {
-       throw new Exception("Registro inhabilitado");
-   }else {
-       String code = serviceClient.GenerateCodeCustomer(entityUpdate.getTypeDocument(), entityUpdate.getDocument(), fecha);
-       
-       
-       Client client = opClient.get();
-       client.setCode(code);
-       serviceClient.update(client.getId(), client);
-   }
-   
-
-       
-       
-       
+   if (opClient.isPresent() && opClient.get().getDeletedAt() == null) {
+	    String code = serviceClient.GenerateCodeCustomer(entityUpdate.getTypeDocument(), entityUpdate.getDocument(), fecha);
+	    Client client = opClient.get();
+	    client.setCode(code);
+	    serviceClient.update(client.getId(), client);
+	}
    }
 
 
-
-
-
-
-
-
-	
-
-	
 	
 }

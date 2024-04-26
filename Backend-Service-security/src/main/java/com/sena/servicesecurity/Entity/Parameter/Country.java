@@ -15,14 +15,14 @@ import jakarta.persistence.Table;
 public class Country extends ABaseEntity{
 
 	
-    @Column(name = "name", length = 50, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
     
-    @Column(name = "code", length = 50, nullable = false)
+    @Column(name = "code", nullable = false)
     private String code;
     
     
-    @Column(name = "description", length = 50, nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
     
     

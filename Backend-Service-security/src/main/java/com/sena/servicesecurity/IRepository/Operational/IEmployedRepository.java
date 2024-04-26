@@ -16,6 +16,8 @@ public interface IEmployedRepository extends IBaseRepository<Employed,Long>{
 	@Query( value = "SELECT \r\n"
 			+ "em.code,\r\n"
 			+ "em.id,\r\n"
+			+ "em.deleted_at AS deletedAt,\r\n"
+			+ "em.state,\r\n"
 			+ "concat(p.first_name,'  ',p.last_name) as person,\r\n"
 			+ "ps.name AS position,\r\n"
 			+ "cm.rs AS company\r\n"

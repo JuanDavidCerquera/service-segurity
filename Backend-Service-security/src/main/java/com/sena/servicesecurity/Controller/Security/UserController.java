@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sena.servicesecurity.Controller.ABaseController;
 import com.sena.servicesecurity.DTO.ApiResponseDto;
 import com.sena.servicesecurity.DTO.IUserDto;
+import com.sena.servicesecurity.DTO.SaveUserPersonDTO;
+import com.sena.servicesecurity.Entity.Security.Person;
 import com.sena.servicesecurity.Entity.Security.User;
 import com.sena.servicesecurity.IService.Security.IUserService;
 
@@ -38,6 +40,15 @@ public class UserController extends ABaseController<User,IUserService>{
 	        return ResponseEntity.internalServerError().body(new ApiResponseDto<>(e.getMessage(), null, false));
 	    }
 	}
+	
+    @PostMapping("/userPerson")
+    public ResponseEntity<ApiResponseDto<User>> saveUserPerson(@RequestBody SaveUserPersonDTO userPerson ) {
+        try {
+            return ResponseEntity.ok(new ApiResponseDto<User>("Datos guardados", service.saveUserPerson(userPerson), true));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(new ApiResponseDto<User>(e.getMessage(), null, false));
+        }
+    }
 
 	
 }

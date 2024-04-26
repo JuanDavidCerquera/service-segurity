@@ -1,5 +1,7 @@
 package com.sena.servicesecurity.DTO;
 
+import java.time.LocalDateTime;
+
 public interface IContractDto extends IGenericDto	{
 
 	String getCode();
@@ -9,4 +11,5 @@ public interface IContractDto extends IGenericDto	{
 	String getObject();
 	String getCompany();
 	String getPerson();
+	LocalDateTime getDeletedAt();
 }
